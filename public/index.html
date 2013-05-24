@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<title>Pajączki</title>
+	<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+
+<div id="content">
+	<div id="room"></div>
+	<div id="room-list"></div>
+	<div id="messages"></div>
+
+	<form id="send-form">
+		<input id="send-message"/>
+		<input id="send-btn" type="submit" value="Send"/>
+
+		<div id="help">
+			Komendy gry:
+			<ul>
+				<li>Zmień ksywę: <code>/nick [username]</code></li>
+				<li>Stwórz pokój: <code>/join [room name]</code></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<script src="/js/chat.js"></script>
+<script src="/js/chat-ui.js"></script>
+
+</body>
+</html>

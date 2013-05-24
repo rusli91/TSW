@@ -1,0 +1,5 @@
+body { font: 14px/1.5 "Lucida Grance", Helvetica, Arial, sans-serif; padding:50px; }
+a { color: #00B7FF; }
+#content { width: 800px; margin: 0 auto; }
+#room { margin-bottom: 1em; background: #ddd }
+#messages { width: 690px; height: 300px; margin-bottom: 1em; margin-right: 10px; overflow: auto; background: #eee; }
