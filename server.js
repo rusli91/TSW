@@ -1,5 +1,6 @@
 var express = require('express');
 var http = require('http');
+var less = require('less-middleware');
 var path = require('path');
 
 var osm = express();
@@ -8,7 +9,7 @@ osm.configure(function() {
     osm.use(express.favicon());
     osm.use(express.logger('dev'));
     osm.use(less({
-        src: __dirname + '/public',
+        src: __dirname + '/client/less',
         compress: true
     }));
     osm.use(express.static(path.join(__dirname, 'client')));

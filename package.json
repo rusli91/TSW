@@ -1,11 +1,11 @@
 {
-	"name": "pajaczki",
-	"version": "0.0.1",
-	"description": "Pajączki",
-
-	"dependencies": {
-		"socket.io": "~0.9.6",
-        "express": "3.x",
-		"mime": "~1.2.7"
-	}
+  "name": "pajak",
+  "main":"./lib/main.js",
+  "dependencies" : {
+    "node-static":"*",
+    "sockjs": "*",
+	"express": "*"
+  },
+  "version" : "0.0.1",
+  "engines" : { "node": ">= 0.8.1" }
 }
