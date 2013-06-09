@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet/less" type="text/css" href="less/style.less" />
-    <script src="less/less.js" type="text/javascript"></script>
-    <title>Pająk Multiplayer</title>
-  </head>
-  <body>
-    <div class="loader">
-      <div class="loading">
-        <span class="loadingMessage">Ładowanie...</span>
-      </div>
-    </div>
-    <div class="info" style="display:none">
-      <div class="box">
-        <h1>Pająk Multiplayer</h1>
-		<h2>Sterowanie:</h2>
-        <ul>
-          <li>Strzałka w górę - zwrot pająka w górę</li>
-          <li>Strzałka w dół - zwrot pająka w dół</li>
-          <li>Strzałka w prawo - zwrot pająka w prawo</li>
-          <li>Strzałka w lewo - zwrot pająka w lewo</li>
-        </ul>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet/less" type="text/css" href="less/style.less" />
+        <script src="less/less.js" type="text/javascript"></script>
+        <script src="scripts/menu.js" type="text/javascript"></script>
+        <title>Pająki</title>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="loading">
+                <span class="loadingMessage">LOADING...</span>
+            </div>
+        </div>
+        <div class="info" style="display:none; margin:0 auto;">
+            <div class="box">
 
-        <button>Start Game</button>
-      </div>
-    </div>
-    <div id="view">
-      <div id="world"></div>
-    </div>
-  </body>
-  <script data-main="scripts/main" src="scripts/require-jquery.js"></script>
+                <button style="top:50%;left:50%;">Zagraj</button>
+            </div>
+        </div>
+        <div id="center">
+            <div id="container">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a>
+
+                    </li>
+                    <li><a href="#">Opis gry</a>
+                        <ul>
+                            <li><a href="#" onClick="javascript:oproj();">O projekcie</a></li>
+                            <li><a href="#" onClick="javascript:oproje();">Zasady gry</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/rusli91/TSW">Repozytorium</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class ="wynik"></div>
+        <div id="pajak"></div>
+        <div id="view">
+            <div id="world"></div>
+        </div>
+
+    </body>
+    <script data-main="scripts/main" src="scripts/require-jquery.js"></script>
 </html>

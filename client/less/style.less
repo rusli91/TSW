@@ -8,7 +8,7 @@ body {
 .loader {
   .fullscreen;
   overflow: hidden;
-  background-color: rgba(192, 192, 192, 0.50);
+  background-color: #0f808c;
   z-index: 10000000;
 }
 
@@ -19,8 +19,8 @@ body {
   font-weight: 700;
   font-size: 42px;
   text-align: center;
-  color: rgba(0, 0, 0, 1);
-
+  color: #0f808c;
+  text-shadow: 0 2px rgba(255,255,255,0.9);
   span {
     display: inline-block;
 
@@ -54,15 +54,181 @@ body {
     50% {opacity: 0.0; }
     100% { opacity: 1.0; }
   }
-}
+}* {
+  	margin: 0; 
+		padding: 0;
+		box-sizing: border-box;
+	}
 
+
+
+	#container {
+		position: relative;
+		width: 940px;	
+                margin: 0 auto;
+	}
+
+	#container:after {
+		content: "";
+		display: block;
+		clear: both;
+		height: 0;
+	}
+
+	#menu {
+		position: relative;
+		float: left;
+		width: 100%;
+		padding: 0 20px;
+		border-radius: 3px;
+                color:white;
+		background: #ccc; 
+	}
+
+	#menu, #menu ul {
+		list-style: none;
+	}
+
+	#menu > li {
+		float: left;
+		position: relative;
+		border-right: 1px solid rgba(0,0,0,.1);
+		box-shadow: 1px 0 0 rgba(255,255,255,.25);
+		perspective: 1000px;
+		
+	}
+
+	#menu > li:first-child {
+		border-left: 1px solid rgba(255,255,255,.25);
+		box-shadow: -1px 0 0 rgba(0,0,0,.1), 1px 0 0 rgba(255,255,255,.25);
+	}
+
+	#menu a {
+		display: block;
+		position: relative;
+		z-index: 10;
+		padding: 13px 20px 13px 20px;
+		text-decoration: none;
+		color: white;
+		line-height: 1;
+		font-weight: 600;
+		font-size: 12px;
+		letter-spacing: -.05em;
+		background: transparent;		
+		text-shadow: 0 1px 1px rgba(255,255,255,.9);
+		transition: all .25s ease-in-out;
+	
+	}
+
+	#menu > li:hover > a {
+		background: #333;
+		color: rgba(0,223,252,1);
+		text-shadow: none;
+	}
+
+	#menu li ul  {
+		position: absolute;
+		left: 0;
+		z-index: 1;
+		width: 200px;
+		padding: 0;
+		opacity: 0;
+		visibility: hidden;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		background: transparent;
+		overflow: hidden;
+		transform-origin: 50% 0%;
+	}
+
+
+	#menu li:hover ul {
+		
+		padding: 15px 0;
+		background: #333;
+		opacity: 1;
+		visibility: visible;
+		box-shadow: 1px 1px 7px rgba(0,0,0,.5);
+		animation-name: swingdown;
+		animation-duration: 1s;
+		animation-timing-function: ease;
+
+	}
+
+	@keyframes swingdown {
+		0% {
+			opacity: .99999;
+			transform: rotateX(90deg);
+		}
+
+		30% {			
+			transform: rotateX(-20deg) rotateY(5deg);
+			animation-timing-function: ease-in-out;
+		}
+
+		65% {
+			transform: rotateX(20deg) rotateY(-3deg);
+			animation-timing-function: ease-in-out;
+		}
+
+		100% {
+			transform: rotateX(0);
+			animation-timing-function: ease-in-out;
+		}
+	}
+
+	#menu li li a {
+		padding-left: 15px;
+		font-weight: 400;
+		color: #ddd;
+		text-shadow: none;
+		border-top: dotted 1px transparent;
+		border-bottom: dotted 1px transparent;
+		transition: all .15s linear;
+	}
+
+	#menu li li a:hover {
+		color: rgba(0,223,252,1);
+		border-top: dotted 1px rgba(255,255,255,.15);
+		border-bottom: dotted 1px rgba(255,255,255,.15);
+		background: rgba(0,223,252,.02);
+	}
+        
+        center {
+            
+            margin: 0 auto;
+        }
+        .wynik {
+position:absolute;
+left:80%;
+min-height:20px;
+min-width:20px;
+position:absolute;
+background:url(/images/pajak.png);
+background-repeat: no-repeat;
+z-index:2;
+}
+        
+        
+#pajak {
+position:absolute;
+left:49.5%; 
+top:49.5%;
+min-height:20px;
+min-width:20px;
+position:absolute;
+background:url(/images/pajak.png);
+background-repeat: no-repeat;
+z-index:2;
+}
 #view {
   position:absolute;
   left:0;
   top:0;
   width: 100%;
   height:100%;
-  background-color: #002135;
+  background-image: url(/images/bg.jpg);
+background-size: 100%;
   overflow: hidden;
   #world {
     position:absolute;
@@ -75,15 +241,13 @@ body {
       position:absolute;
       width: 10px;
       height: 10px;
-      border-radius: 3px;
+      border-radius: 1px;
     }
-    .apple {
+    .muszka {
       position:absolute;
       width: 10px;
       height: 10px;
-      border-radius: 10px;
-      border: 1px solid darkred;
-      background-color: red;
+      background-image: url(/images/moszka.png);
     }
   }
 }
@@ -97,12 +261,11 @@ body {
   height:100%;
   overflow: auto;
   .box {
-    background-color: rgba(255,255,255,0.6);
     width: 600px;
     height:360px;
     margin:auto;
-    margin-top:5%;
-    border: outset 10px rgba(106, 163, 255, 0.65);
+    margin-top:15%;
+    margin-left:45%;
     padding: 20px;
     h1 {
       text-align: center;
@@ -136,15 +299,15 @@ body {
       padding: 10px 20px;
       background: -moz-linear-gradient(
         top,
-        #0055ff 0%,
+        #cccccc 0%,
         #000000);
       background: -webkit-gradient(
         linear, left top, left bottom,
-        from(#0055ff),
+        from(#cccccc),
         to(#000000));
       -moz-border-radius: 30px;
       -webkit-border-radius: 30px;
-      border-radius: 30px;
+      border-radius: 15px;
       border: 1px solid #000000;
       -moz-box-shadow:
         0px 1px 3px rgba(000,000,000,0.5),

@@ -1,0 +1,10 @@
+{
+  "name": "pajak",
+  "main":"./lib/main.js",
+  "dependencies" : {
+    "node-static":"*",
+    "sockjs": "*"
+  },
+  "version" : "0.0.1",
+  "engines" : { "node": ">= 0.8.1" }
+}
