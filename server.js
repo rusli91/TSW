@@ -15,4 +15,4 @@ osm.configure(function() {
 });
 var server = http.createServer(osm).listen(osm.get('port'), function() {
     console.log("Serwer http działa na porcie: " + osm.get('port'));
-});
+});  
